@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://paketo.io/docs/</loc>
+    <lastmod>2020-03-31T12:50:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://paketo.io/docs/getting-started/build-an-example-app/</loc>
+    <lastmod>2020-03-31T12:50:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://paketo.io/docs/getting-started/build-your-application/</loc>
+    <lastmod>2020-03-31T12:50:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://paketo.io/docs/getting-started/where-do-buildpacks-factor-in/</loc>
+    <lastmod>2020-03-31T12:50:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://paketo.io/docs/create-paketo-buildpack/</loc>
+    <lastmod>2020-04-13T15:45:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://paketo.io/</loc>
+    <lastmod>2020-04-13T15:45:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://paketo.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://paketo.io/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>https://paketo.io/tags/</loc>
+  </url>
+  
+</urlset>

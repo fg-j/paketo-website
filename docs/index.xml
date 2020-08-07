@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting Started on Paketo Buildpacks</title>
+    <link>https://paketo.io/docs/</link>
+    <description>Recent content in Getting Started on Paketo Buildpacks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 31 Mar 2020 12:50:55 -0400</lastBuildDate>
+    
+	<atom:link href="https://paketo.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Build an Example App</title>
+      <link>https://paketo.io/docs/getting-started/build-an-example-app/</link>
+      <pubDate>Tue, 31 Mar 2020 12:50:55 -0400</pubDate>
+      
+      <guid>https://paketo.io/docs/getting-started/build-an-example-app/</guid>
+      <description>Build An Example App First lets create a simple Node.js application to build. It should have the following structure:
+Write a Simple App The GitHub repository for the following application can be found here.
+Application Structure . └── test-drive ├── server.js └── package.json The server.js file should contain the following:
+const http = require(&#39;http&#39;); const leftpad = require(&#39;leftpad&#39;); const port = process.env.PORT || 8080; const server = http.createServer((request, response) =&amp;gt; { response.</description>
+    </item>
+    
+    <item>
+      <title>Building Your Application</title>
+      <link>https://paketo.io/docs/getting-started/build-your-application/</link>
+      <pubDate>Tue, 31 Mar 2020 12:50:55 -0400</pubDate>
+      
+      <guid>https://paketo.io/docs/getting-started/build-your-application/</guid>
+      <description>Building Your Application Build an image using pack with the following command
+pack build test-drive -p &amp;lt;path/to/test-drive/app&amp;gt; --builder gcr.io/paketo-buildpacks/builder:base Verify that your build was successful by running docker images you should expect to see something similar to the following output
+REPOSITORY TAG IMAGE ID CREATED SIZE gcr.io/paketo-buildpacks/run base-cnb 88e2c125e701 6 days ago 1.05GB gcr.io/paketo-buildpacks/builder base 7264ff2c18c3 40 years ago 1.5GB test-drive latest fcaa3645e775 40 years ago 1.13GB Run the image locally on port 8080 using the following command</description>
+    </item>
+    
+    <item>
+      <title>Where Do Buildpacks Factor In</title>
+      <link>https://paketo.io/docs/getting-started/where-do-buildpacks-factor-in/</link>
+      <pubDate>Tue, 31 Mar 2020 12:50:55 -0400</pubDate>
+      
+      <guid>https://paketo.io/docs/getting-started/where-do-buildpacks-factor-in/</guid>
+      <description>Where Do Buildpacks Factor In In the above example you used pack and a builder. A builder is an image comprised of three things
+ All of the buildpacks that are used by the builder Default groups buildpacks and the order in which they run in that group The base image your application is built on top of  All buildpacks in the builder can be overridden by the user.</description>
+    </item>
+    
+    <item>
+      <title>Create Paketo Buildpack</title>
+      <link>https://paketo.io/docs/create-paketo-buildpack/</link>
+      <pubDate>Mon, 13 Apr 2020 15:45:49 -0400</pubDate>
+      
+      <guid>https://paketo.io/docs/create-paketo-buildpack/</guid>
+      <description>How to Write a Cloud Native Buildpack Using Packit If the entire Cloud Native Buildpack experience is new to you, you may want to stop and take some time to read about authoring a a Cloud Native Buildpack (CNB). Packit is a Go library that is an abstraction that conforms to the CNB specification that takes a minimal approach in terms of the features that are implemented giving a lot of fine control to the buildpack author.</description>
+    </item>
+    
+  </channel>
+</rss>
