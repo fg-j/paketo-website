@@ -2,17 +2,17 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
+
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PN39N8V');</script>
 
-<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Getting Started - Paketo Buildpacks</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover">
 
 
 
@@ -25,8 +25,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:card" content="" />
 
 
-<link rel="stylesheet" href="/css/paketo.css">
 
+<link rel="stylesheet" href="/css/main.min.c815d9c7c52c15f43b1785991c3e776e097aad0df58bc53f2134edc2c93278e3.css">
 </head>
 
 <body>
@@ -35,96 +35,983 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
 
-    <header class="cf">
-    <div class="logo left">
-        <a href="/">
-            <img src="/images/paketo-logo-full-color.png">
-        </a>
-    </div>
-    <div class="right">
-        <div class="nav-opener hidden">
-            <span class="top transition-03"></span>
-            <span class="middle transition-03"></span>
-            <span class="bottom transition-03"></span>
-        </div>
-        <nav class="cf">
-            <div class="upper-nav right">
-                <a href="/">Home</a>
-                <a href="/docs/">Docs</a>
-                <a href="/faq/">FAQ</a>
-                <a class="external-link" target="_blank" href="https://medium.com/paketo-buildpacks/">Blog <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 32v448h448V32H0zm372.2 106.1l-24 23c-2.1 1.6-3.1 4.2-2.7 6.7v169.3c-.4 2.6.6 5.2 2.7 6.7l23.5 23v5.1h-118V367l24.3-23.6c2.4-2.4 2.4-3.1 2.4-6.7V199.8l-67.6 171.6h-9.1L125 199.8v115c-.7 4.8 1 9.7 4.4 13.2l31.6 38.3v5.1H71.2v-5.1l31.6-38.3c3.4-3.5 4.9-8.4 4.1-13.2v-133c.4-3.7-1-7.3-3.8-9.8L75 138.1V133h87.3l67.4 148L289 133.1h83.2v5z"/></svg></a>
-<a class="external-link" target="_blank" href="https://slack.paketo.io">Slack <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg></a>
-<a class="external-link" target="_blank" href="https://github.com/paketo-buildpacks">Github <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a>
+    <div id="header-skip-link" class="screenreader-container">
+    <a href="#title" class="screenreader-text">Skip to Content</a>
+</div>
 
-            </div>
-        </nav>
+    
+
+
+
+
+<header class="header--narrow">
+    <a class="paketo-logo" href="/">
+        <img class="paketo-logo__image" src="/v2/images/logo-paketo-light.svg" alt="Paketo Buildpacks Homepage">
+    </a>
+    <div id="navigation" class="right-overlay">
+        <div class="nav-opener">
+            <span class="nav-opener__bar nav-opener__bar-top"></span>
+            <span class="nav-opener__bar nav-opener__bar-middle"></span>
+            <span class="nav-opener__bar nav-opener__bar-bottom"></span>
+        </div>
+        <div class="nav-container" id="nav-container">
+            <nav class="nav" id="nav-tray" >
+                <div class="nav__linkarea text--400">
+                    <a class="nav-link" href="/docs">docs</a>
+                    <a class="nav-link" href="/community">community</a>
+                    <a class="nav-link" href="https://blog.paketo.io">blog</a>
+                    <a class="nav-link" href="https://github.com/paketo-buildpacks">github</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="desktop-nav">
+        
+        
+        
+        <a class="nav-link nav-link--desktop  nav-link--desktop--active" href="/docs">docs</a>
+        
+        <a class="nav-link nav-link--desktop   " href="/community">community</a>
+        <a class="nav-link nav-link--desktop " href="https://blog.paketo.io">blog</a>
+        <a class="nav-link nav-link--desktop " href="https://github.com/paketo-buildpacks">github</a>
     </div>
 </header>
 
 
+    <div class="docs">
+    <div class="docs-sidebar">
+        
+<nav class="docs-menu">
+    <ul class="docs-menu__top-level-list">
+        
+        
+            
     
-<div class="flex docs no-flex-800 cf">
-    <div class="docs-sidebar relative z2 bg-white">
-        
-<div class="docs-menu">
-    <h4>Docs</h4>
-    <ul>
-        <li class="section-docs parent">
-                <a href="https://paketo.io/docs/" class=" active">Getting Started</a>
+        <li class="docs-menu__leaf">
+            <a href="/docs/" class="docs-menu__item docs-menu__link docs-menu__link--active">
                 
-                <ul class="sub-menu">
-        <li class="page"><a href="https://paketo.io/docs/getting-started/build-an-example-app/" class="">Build an Example App</a></li>
-        <li class="page"><a href="https://paketo.io/docs/getting-started/build-your-application/" class="">Building Your Application</a></li>
-        <li class="page"><a href="https://paketo.io/docs/getting-started/where-do-buildpacks-factor-in/" class="">Where Do Buildpacks Factor In</a></li>
-        <li class="page"><a href="https://paketo.io/docs/create-paketo-buildpack/" class="">Create Paketo Buildpack</a></li></ul>
-                
-            </li>
-        </ul>
-</div>
-
-
-    </div>
-    <div class="docs-body relative">
-        <div class="text-col docs-text pad50">
-            <h1 id="getting-started">Getting Started</h1>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>Before using a paketo buildpacks to build an application image we need the following tools.</p>
-<p><a href="https://buildpacks.io/docs/install-pack/"><strong>Pack</strong></a></p>
-<p>A command line tool designed to take and application build a runnable OCI image using Cloud Native Buildpacks and the Docker daemon.</p>
-<p><a href="https://docs.docker.com/install/"><strong>Docker</strong></a></p>
-<p>A suite of tooling around building and managing images.</p>
-
-        </div>
-
+                <span>Getting Started</span>
+            </a>
+        </li>
+    
         
-            <div class="next-up absolute pad50">
-                <h3>Next up</h3>
-                <p><a class="cta" href="/docs/getting-started/build-an-example-app/">Build an Example App</a></p>
+            
+    
+        <li class="docs-menu__item docs-menu__parent">
+            
+            <div class="docs-menu__section-header ">
+                
+                <span>How To</span>
+                <button class="expander-button  docs-menu__expander-button">
+                    <svg class="expander-button__triangle " width="38" height="34" viewBox="0 0 38 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.140625" width="37.0257" height="34" rx="8" fill="#888888" fill-opacity="0.25"/>
+                        <path d="M28.1604 13H8.14648L18.6538 22.5L28.1604 13Z" fill="#FEFCFC"/>
+                        </svg>
+                </button>
             </div>
+            
+            <ul class="docs-menu__children-list ">
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/howto/dotnet-core/" class="docs-menu__item docs-menu__link ">
+                
+                <span>.NET Core</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/howto/go/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Go</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/howto/web-servers/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Web Servers</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/howto/java/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Java</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/howto/nodejs/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Node.js</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/howto/php/" class="docs-menu__item docs-menu__link ">
+                
+                <span>PHP</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/howto/ruby/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Ruby</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/howto/create-paketo-buildpack/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Create a Paketo Buildpack</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/howto/bom/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Access the Bill of Materials</span>
+            </a>
+        </li>
+    
+                
+            </ul>
+        </li>
+    
+        
+            
+    
+        <li class="docs-menu__item docs-menu__parent">
+            
+            <div class="docs-menu__section-header ">
+                
+                <span>Concepts</span>
+                <button class="expander-button  docs-menu__expander-button">
+                    <svg class="expander-button__triangle " width="38" height="34" viewBox="0 0 38 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.140625" width="37.0257" height="34" rx="8" fill="#888888" fill-opacity="0.25"/>
+                        <path d="M28.1604 13H8.14648L18.6538 22.5L28.1604 13Z" fill="#FEFCFC"/>
+                        </svg>
+                </button>
+            </div>
+            
+            <ul class="docs-menu__children-list ">
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/concepts/buildpacks/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Buildpacks</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/concepts/builders/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Builders</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/concepts/stacks/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Stacks</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/concepts/bom/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Bill of Materials</span>
+            </a>
+        </li>
+    
+                
+            </ul>
+        </li>
+    
+        
+            
+    
+        <li class="docs-menu__item docs-menu__parent">
+            
+            <div class="docs-menu__section-header ">
+                
+                <span>Reference</span>
+                <button class="expander-button  docs-menu__expander-button">
+                    <svg class="expander-button__triangle " width="38" height="34" viewBox="0 0 38 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.140625" width="37.0257" height="34" rx="8" fill="#888888" fill-opacity="0.25"/>
+                        <path d="M28.1604 13H8.14648L18.6538 22.5L28.1604 13Z" fill="#FEFCFC"/>
+                        </svg>
+                </button>
+            </div>
+            
+            <ul class="docs-menu__children-list ">
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/reference/configuration/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Configuring Paketo Buildpacks</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/reference/httpd-reference/" class="docs-menu__item docs-menu__link ">
+                
+                <span>HTTPD Buildpack</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/reference/dotnet-core-reference/" class="docs-menu__item docs-menu__link ">
+                
+                <span>.NET Core Buildpack</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/reference/go-reference/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Go Buildpack</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/reference/java-reference/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Java Buildpack</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/reference/java-native-image-reference/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Java Native Image Buildpack</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/reference/nginx-reference/" class="docs-menu__item docs-menu__link ">
+                
+                <span>NGINX Buildpack</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/reference/nodejs-reference/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Node.js Buildpack</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/reference/php-reference/" class="docs-menu__item docs-menu__link ">
+                
+                <span>PHP Buildpack</span>
+            </a>
+        </li>
+    
+                
+                    
+    
+        <li class="docs-menu__leaf">
+            <a href="/docs/reference/ruby-reference/" class="docs-menu__item docs-menu__link ">
+                
+                <span>Ruby Buildpack</span>
+            </a>
+        </li>
+    
+                
+            </ul>
+        </li>
+    
+        
+    </ul>
+</nav>
+
+
+
+    </div>
+    <div class="docs-body">
+        <div class="docs-body__container">
+            
+  <a href="http://github.com/paketo-buildpacks/paketo-website/edit/main/content/docs/_index.md" target="_blank" class="github-edit" style="text-decoration:none">
+    <div class="github-edit__content">
+      <div class="github-edit__logo-container">
+        <img class="github-edit__logo" src="/images/github-mark.png">
+      </div>
+        <div class="github-edit__text">Edit</div>
+    </div>
+</a>
+
+            <h1 id="title">Getting Started</h1>
+            
+            <div class="docs-body__markdown">
+                <p>These guides get you started with Paketo Buildpacks using Paketo <a href="https://paketo.io/docs/concepts/builders/"><strong>Builders</strong></a>, the <strong>pack</strong> CLI, and <strong>Docker</strong>.</p>
+<h3 id="javajava-guide" class="markup-heading">
+    <a class="markup-heading__link" href="#javajava-guide">
+        <a href="#java">Java</a>
+    </a>
+</h3><h3 id="nodejsnode-guide" class="markup-heading">
+    <a class="markup-heading__link" href="#nodejsnode-guide">
+        <a href="#nodejs">Node.js</a>
+    </a>
+</h3><h3 id="net-coredotnet-guide" class="markup-heading">
+    <a class="markup-heading__link" href="#net-coredotnet-guide">
+        <a href="#net-core">.NET Core</a>
+    </a>
+</h3><h2 id="java" class="markup-heading">
+    <a class="markup-heading__link" href="#java">
+        Java
+    </a>
+</h2><p>Let&rsquo;s use the <code>base</code> Paketo Builder and the <strong>pack</strong> CLI to build a Java app
+as a runnable container image.</p>
+<h3 id="prerequisites" class="markup-heading">
+    <a class="markup-heading__link" href="#prerequisites">
+        Prerequisites
+    </a>
+</h3><ol>
+<li>Install Docker by following this <a href="https://docs.docker.com/get-docker/">guide</a>.</li>
+<li>Install the pack CLI by following this <a href="https://buildpacks.io/docs/install-pack/">guide</a>.</li>
+</ol>
+<h3 id="build-the-app-image-from-source-code" class="markup-heading">
+    <a class="markup-heading__link" href="#build-the-app-image-from-source-code">
+        Build the App Image From Source Code
+    </a>
+</h3><p>Clone the Paketo samples repository and navigate to the source code for the sample Java app.</p>
+<pre class="copyable"><code class="copyable__code">git clone https://github.com/paketo-buildpacks/samples \
+&amp;&amp; cd samples/java/maven
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<p>From the sample app directory, use the pack CLI to build an app image.</p>
+<pre class="copyable"><code class="copyable__code">pack build paketo-demo-app --builder paketobuildpacks/builder:base
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<div class="code-output">
+    <div class="btn code-output__btn code-output__btn">View Output</div>
+    <pre class="code-output__output-container">
+        <code class="code-output__output">===&gt; DETECTING
+7 of 18 buildpacks participating
+paketo-buildpacks/ca-certificates   2.3.2
+paketo-buildpacks/bellsoft-liberica 8.2.0
+paketo-buildpacks/maven             5.3.2
+paketo-buildpacks/executable-jar    5.1.2
+paketo-buildpacks/apache-tomcat     5.6.1
+paketo-buildpacks/dist-zip          4.1.2
+paketo-buildpacks/spring-boot       4.4.2
+===&gt; ANALYZING
+Previous image with name &#34;paketo-demo-app&#34; not found
+===&gt; RESTORING
+===&gt; BUILDING
+
+Paketo CA Certificates Buildpack 2.3.2
+  https://github.com/paketo-buildpacks/ca-certificates
+  Launch Helper: Contributing to layer
+    Creating /layers/paketo-buildpacks_ca-certificates/helper/exec.d/ca-certificates-helper
+
+Paketo BellSoft Liberica Buildpack 8.2.0
+  https://github.com/paketo-buildpacks/bellsoft-liberica
+  Build Configuration:
+    $BP_JVM_VERSION              11              the Java version
+  Launch Configuration:
+    $BPL_JVM_HEAD_ROOM           0               the headroom in memory calculation
+    $BPL_JVM_LOADED_CLASS_COUNT  35% of classes  the number of loaded classes in memory calculation
+    $BPL_JVM_THREAD_COUNT        250             the number of threads in memory calculation
+    $JAVA_TOOL_OPTIONS                           the JVM launch flags
+  BellSoft Liberica JDK 11.0.12: Contributing to layer
+    Downloading from https://github.com/bell-sw/Liberica/releases/download/11.0.12&#43;7/bellsoft-jdk11.0.12&#43;7-linux-amd64.tar.gz
+    Verifying checksum
+    Expanding to /layers/paketo-buildpacks_bellsoft-liberica/jdk
+    Adding 129 container CA certificates to JVM truststore
+    Writing env.build/JAVA_HOME.override
+    Writing env.build/JDK_HOME.override
+  BellSoft Liberica JRE 11.0.12: Contributing to layer
+    Downloading from https://github.com/bell-sw/Liberica/releases/download/11.0.12&#43;7/bellsoft-jre11.0.12&#43;7-linux-amd64.tar.gz
+    Verifying checksum
+    Expanding to /layers/paketo-buildpacks_bellsoft-liberica/jre
+    Adding 129 container CA certificates to JVM truststore
+    Writing env.launch/BPI_APPLICATION_PATH.default
+    Writing env.launch/BPI_JVM_CACERTS.default
+    Writing env.launch/BPI_JVM_CLASS_COUNT.default
+    Writing env.launch/BPI_JVM_SECURITY_PROVIDERS.default
+    Writing env.launch/JAVA_HOME.default
+    Writing env.launch/MALLOC_ARENA_MAX.default
+  Launch Helper: Contributing to layer
+    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/active-processor-count
+    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/java-opts
+    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/link-local-dns
+    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/memory-calculator
+    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/openssl-certificate-loader
+    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/security-providers-configurer
+    Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/security-providers-classpath-9
+  JVMKill Agent 1.16.0: Contributing to layer
+    Downloading from https://github.com/cloudfoundry/jvmkill/releases/download/v1.16.0.RELEASE/jvmkill-1.16.0-RELEASE.so
+    Verifying checksum
+    Copying to /layers/paketo-buildpacks_bellsoft-liberica/jvmkill
+    Writing env.launch/JAVA_TOOL_OPTIONS.append
+    Writing env.launch/JAVA_TOOL_OPTIONS.delim
+  Java Security Properties: Contributing to layer
+    Writing env.launch/JAVA_SECURITY_PROPERTIES.default
+    Writing env.launch/JAVA_TOOL_OPTIONS.append
+    Writing env.launch/JAVA_TOOL_OPTIONS.delim
+
+Paketo Maven Buildpack 5.3.2
+  https://github.com/paketo-buildpacks/maven
+  Build Configuration:
+    $BP_MAVEN_BUILD_ARGUMENTS  -Dmaven.test.skip=true package  the arguments to pass to Maven
+    $BP_MAVEN_BUILT_ARTIFACT   target/*.[jw]ar                 the built application artifact explicitly.  Supersedes $BP_MAVEN_BUILT_MODULE
+    $BP_MAVEN_BUILT_MODULE                                     the module to find application artifact in
+    Creating cache directory /home/cnb/.m2
+  Compiled Application: Contributing to layer
+    Executing mvnw --batch-mode -Dmaven.test.skip=true package
+[INFO] Scanning for projects...
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/2.5.3/spring-boot-starter-parent-2.5.3.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/2.5.3/spring-boot-starter-parent-2.5.3.pom (8.6 kB at 19 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/2.5.3/spring-boot-dependencies-2.5.3.pom
+...
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:32 min
+[INFO] Finished at: 2021-08-12T18:22:25Z
+[INFO] ------------------------------------------------------------------------
+  Removing source code
+Paketo Executable JAR Buildpack 5.1.2
+  https://github.com/paketo-buildpacks/executable-jar
+  Class Path: Contributing to layer
+    Writing env/CLASSPATH.delim
+    Writing env/CLASSPATH.prepend
+  Process types:
+    executable-jar: java org.springframework.boot.loader.JarLauncher (direct)
+    task:           java org.springframework.boot.loader.JarLauncher (direct)
+    web:            java org.springframework.boot.loader.JarLauncher (direct)
+
+Paketo Spring Boot Buildpack 4.4.2
+  https://github.com/paketo-buildpacks/spring-boot
+  Creating slices from layers index
+    dependencies
+    spring-boot-loader
+    snapshot-dependencies
+    application
+  Launch Helper: Contributing to layer
+    Creating /layers/paketo-buildpacks_spring-boot/helper/exec.d/spring-cloud-bindings
+  Spring Cloud Bindings 1.7.1: Contributing to layer
+    Downloading from https://repo.spring.io/release/org/springframework/cloud/spring-cloud-bindings/1.7.1/spring-cloud-bindings-1.7.1.jar
+    Verifying checksum
+    Copying to /layers/paketo-buildpacks_spring-boot/spring-cloud-bindings
+  Web Application Type: Contributing to layer
+    Reactive web application detected
+    Writing env.launch/BPL_JVM_THREAD_COUNT.default
+  4 application slices
+  Image labels:
+    org.opencontainers.image.title
+    org.opencontainers.image.version
+    org.springframework.boot.version
+===&gt; EXPORTING
+Adding layer &#39;paketo-buildpacks/ca-certificates:helper&#39;
+Adding layer &#39;paketo-buildpacks/bellsoft-liberica:helper&#39;
+Adding layer &#39;paketo-buildpacks/bellsoft-liberica:java-security-properties&#39;
+Adding layer &#39;paketo-buildpacks/bellsoft-liberica:jre&#39;
+Adding layer &#39;paketo-buildpacks/bellsoft-liberica:jvmkill&#39;
+Adding layer &#39;paketo-buildpacks/executable-jar:classpath&#39;
+Adding layer &#39;paketo-buildpacks/spring-boot:helper&#39;
+Adding layer &#39;paketo-buildpacks/spring-boot:spring-cloud-bindings&#39;
+Adding layer &#39;paketo-buildpacks/spring-boot:web-application-type&#39;
+Adding 5/5 app layer(s)
+Adding layer &#39;launcher&#39;
+Adding layer &#39;config&#39;
+Adding layer &#39;process-types&#39;
+Adding label &#39;io.buildpacks.lifecycle.metadata&#39;
+Adding label &#39;io.buildpacks.build.metadata&#39;
+Adding label &#39;io.buildpacks.project.metadata&#39;
+Adding label &#39;org.opencontainers.image.title&#39;
+Adding label &#39;org.opencontainers.image.version&#39;
+Adding label &#39;org.springframework.boot.version&#39;
+Setting default process type &#39;web&#39;
+Saving paketo-demo-app...
+*** Images (b18bb0f43aca):
+      paketo-demo-app
+Adding cache layer &#39;paketo-buildpacks/bellsoft-liberica:jdk&#39;
+Adding cache layer &#39;paketo-buildpacks/maven:application&#39;
+Adding cache layer &#39;paketo-buildpacks/maven:cache&#39;
+Successfully built image paketo-demo-app
+</code>
+    </pre>
+</div>
+
+<h3 id="run-the-app" class="markup-heading">
+    <a class="markup-heading__link" href="#run-the-app">
+        Run the App
+    </a>
+</h3><p>Let&rsquo;s start an instance of our app and interact with it.</p>
+<p>Run the app image with Docker. It will receive incoming requests <code>localhost:8080</code>.</p>
+<pre class="copyable"><code class="copyable__code">docker run -d -p 8080:8080 -e PORT=8080 paketo-demo-app
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<p>Wait a few moments for the app to start. Then, use <code>curl</code> to check the status of the app.</p>
+<pre class="copyable"><code class="copyable__code">curl -s http://localhost:8080/actuator/health | jq .
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<div class="code-output">
+    <div class="btn code-output__btn code-output__btn">View Output</div>
+    <pre class="code-output__output-container">
+        <code class="code-output__output">{
+  &#34;status&#34;: &#34;UP&#34;
+}
+</code>
+    </pre>
+</div>
+
+<p>You&rsquo;ve done it! As you can see, Paketo buildpacks do most of the hard work for you.</p>
+<p>Check out more <a href="https://github.com/paketo-buildpacks/samples">sample apps</a> that work with Paketo Buildpacks.</p>
+<p>Keep reading to learn about Paketo Builders, the Cloud Native Buildpack API, and what Paketo Buildpacks are doing under the hood to make it easy to build your apps.</p>
+<h2 id="nodejs" class="markup-heading">
+    <a class="markup-heading__link" href="#nodejs">
+        Node.js
+    </a>
+</h2><p>Let&rsquo;s use the <code>base</code> Paketo Builder and the <strong>pack</strong> CLI to build a Node.js app
+as a runnable container image.</p>
+<h3 id="prerequisites-1" class="markup-heading">
+    <a class="markup-heading__link" href="#prerequisites-1">
+        Prerequisites
+    </a>
+</h3><ol>
+<li>Install Docker by following this <a href="https://docs.docker.com/get-docker/">guide</a>.</li>
+<li>Install the pack CLI by following this <a href="https://buildpacks.io/docs/install-pack/">guide</a>.</li>
+</ol>
+<h3 id="build-the-app-image-from-source-code-1" class="markup-heading">
+    <a class="markup-heading__link" href="#build-the-app-image-from-source-code-1">
+        Build the App Image From Source Code
+    </a>
+</h3><p>Clone the Paketo samples repository and navigate to the source code for the sample Node.js app.</p>
+<pre class="copyable"><code class="copyable__code">git clone https://github.com/paketo-buildpacks/samples \
+&amp;&amp; cd samples/demo-apps/app-source
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<p>From the sample app directory, use the pack CLI to build an app image.</p>
+<pre class="copyable"><code class="copyable__code">pack build paketo-demo-app --builder paketobuildpacks/builder:base
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<div class="code-output">
+    <div class="btn code-output__btn code-output__btn">View Output</div>
+    <pre class="code-output__output-container">
+        <code class="code-output__output">===&gt; DETECTING
+4 of 8 buildpacks participating
+paketo-buildpacks/ca-certificates 2.3.2
+paketo-buildpacks/node-engine     0.6.2
+paketo-buildpacks/npm-install     0.4.0
+paketo-buildpacks/npm-start       0.3.0
+===&gt; ANALYZING
+Previous image with name &#34;paketo-demo-app&#34; not found
+===&gt; RESTORING
+===&gt; BUILDING
+
+Paketo CA Certificates Buildpack 2.3.2
+  https://github.com/paketo-buildpacks/ca-certificates
+  Launch Helper: Contributing to layer
+    Creating /layers/paketo-buildpacks_ca-certificates/helper/exec.d/ca-certificates-helper
+Paketo Node Engine Buildpack 0.6.2
+  Resolving Node Engine version
+    Candidate version sources (in priority order):
+      package.json -&gt; &#34;&gt;10&#34;
+      &lt;unknown&gt;    -&gt; &#34;&#34;
+
+    Selected Node Engine version (using package.json): 16.6.2
+
+  Executing build process
+    Installing Node Engine 16.6.2
+      Completed in 4.372s
+
+  Configuring build environment
+    NODE_ENV     -&gt; &#34;production&#34;
+    NODE_HOME    -&gt; &#34;/layers/paketo-buildpacks_node-engine/node&#34;
+    NODE_VERBOSE -&gt; &#34;false&#34;
+
+  Configuring launch environment
+    NODE_ENV     -&gt; &#34;production&#34;
+    NODE_HOME    -&gt; &#34;/layers/paketo-buildpacks_node-engine/node&#34;
+    NODE_VERBOSE -&gt; &#34;false&#34;
+
+    Writing profile.d/0_memory_available.sh
+      Calculates available memory based on container limits at launch time.
+      Made available in the MEMORY_AVAILABLE environment variable.
+
+Paketo NPM Install Buildpack 0.4.0
+  Resolving installation process
+    Process inputs:
+      node_modules      -&gt; &#34;Not found&#34;
+      npm-cache         -&gt; &#34;Not found&#34;
+      package-lock.json -&gt; &#34;Not found&#34;
+
+    Selected NPM build process: &#39;npm install&#39;
+
+  Executing build process
+    Running &#39;npm install --unsafe-perm --cache /layers/paketo-buildpacks_npm-install/npm-cache&#39;
+      Completed in 2.519s
+
+  Configuring launch environment
+    NPM_CONFIG_LOGLEVEL -&gt; &#34;error&#34;
+
+  Configuring environment shared by build and launch
+    PATH -&gt; &#34;$PATH:/layers/paketo-buildpacks_npm-install/modules/node_modules/.bin&#34;
+
+
+Paketo NPM Start Buildpack 0.3.0
+  Assigning launch processes
+    web: node server.js
+
+===&gt; EXPORTING
+Adding layer &#39;paketo-buildpacks/ca-certificates:helper&#39;
+Adding layer &#39;paketo-buildpacks/node-engine:node&#39;
+Adding layer &#39;paketo-buildpacks/npm-install:modules&#39;
+Adding layer &#39;paketo-buildpacks/npm-install:npm-cache&#39;
+Adding 1/1 app layer(s)
+Adding layer &#39;launcher&#39;
+Adding layer &#39;config&#39;
+Adding layer &#39;process-types&#39;
+Adding label &#39;io.buildpacks.lifecycle.metadata&#39;
+Adding label &#39;io.buildpacks.build.metadata&#39;
+Adding label &#39;io.buildpacks.project.metadata&#39;
+Setting default process type &#39;web&#39;
+Saving paketo-demo-app...
+*** Images (1a770ae9a065):
+      paketo-demo-app
+Reusing cache layer &#39;paketo-buildpacks/node-engine:node&#39;
+Reusing cache layer &#39;paketo-buildpacks/npm-install:modules&#39;
+Adding cache layer &#39;paketo-buildpacks/npm-install:npm-cache&#39;
+Successfully built image paketo-demo-app
+</code>
+    </pre>
+</div>
+
+<p>Once the build finishes, you&rsquo;ll see that the resulting image is on your Docker daemon.</p>
+<h3 id="run-the-app-1" class="markup-heading">
+    <a class="markup-heading__link" href="#run-the-app-1">
+        Run the App
+    </a>
+</h3><p>Let&rsquo;s start an instance of our app and interact with it.</p>
+<p>Run the app image with Docker. It will receive incoming requests <code>localhost:8080</code>.</p>
+<pre class="copyable"><code class="copyable__code">docker run -d -p 8080:8080 -e PORT=8080 paketo-demo-app
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<p>Wait a few moments for the app to start. Then, use <code>curl</code> to make a request.</p>
+<pre class="copyable"><code class="copyable__code">curl http://localhost:8080/greeting
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<div class="code-output">
+    <div class="btn code-output__btn code-output__btn">View Output</div>
+    <pre class="code-output__output-container">
+        <code class="code-output__output">Hello from your application image
+</code>
+    </pre>
+</div>
+
+<p>You&rsquo;ve done it! As you can see, Paketo buildpacks do most of the hard work for you.</p>
+<p>Check out more <a href="https://github.com/paketo-buildpacks/samples">sample apps</a> that work with Paketo Buildpacks.</p>
+<p>Keep reading to learn about Paketo Builders, the Cloud Native Buildpack API, and what Paketo Buildpacks are doing under the hood to make it easy to build your apps.</p>
+<h2 id="net-core" class="markup-heading">
+    <a class="markup-heading__link" href="#net-core">
+        .NET Core
+    </a>
+</h2><p>Let&rsquo;s use the <code>base</code> Paketo Builder and the <strong>pack</strong> CLI to build an ASP.NET app
+as a runnable container image.</p>
+<h3 id="prerequisites-2" class="markup-heading">
+    <a class="markup-heading__link" href="#prerequisites-2">
+        Prerequisites
+    </a>
+</h3><ol>
+<li>Install Docker by following this <a href="https://docs.docker.com/get-docker/">guide</a>.</li>
+<li>Install the pack CLI by following this <a href="https://buildpacks.io/docs/install-pack/">guide</a>.</li>
+</ol>
+<h3 id="build-the-app-image-from-source-code-2" class="markup-heading">
+    <a class="markup-heading__link" href="#build-the-app-image-from-source-code-2">
+        Build the App Image From Source Code
+    </a>
+</h3><p>Clone the Paketo samples repository and navigate to the source code for the sample ASP.NET app.</p>
+<pre class="copyable"><code class="copyable__code">git clone https://github.com/paketo-buildpacks/samples \
+&amp;&amp; cd samples/dotnet-core/aspnet
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<p>From the sample app directory, use the pack CLI to build an app image.</p>
+<pre class="copyable"><code class="copyable__code">pack build paketo-demo-app --builder paketobuildpacks/builder:base
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<div class="code-output">
+    <div class="btn code-output__btn code-output__btn">View Output</div>
+    <pre class="code-output__output-container">
+        <code class="code-output__output">===&gt; DETECTING
+7 of 11 buildpacks participating
+paketo-buildpacks/ca-certificates     2.3.2
+paketo-buildpacks/dotnet-core-runtime 0.1.12
+paketo-buildpacks/dotnet-core-aspnet  0.1.12
+paketo-buildpacks/dotnet-core-sdk     0.1.10
+paketo-buildpacks/icu                 0.0.102
+paketo-buildpacks/dotnet-publish      0.3.0
+paketo-buildpacks/dotnet-execute      0.4.0
+===&gt; ANALYZING
+Previous image with name &#34;paketo-demo-app&#34; not found
+===&gt; RESTORING
+===&gt; BUILDING
+
+Paketo CA Certificates Buildpack 2.3.2
+  https://github.com/paketo-buildpacks/ca-certificates
+  Launch Helper: Contributing to layer
+    Creating /layers/paketo-buildpacks_ca-certificates/helper/exec.d/ca-certificates-helper
+Paketo .NET Core Runtime Buildpack 0.1.12
+  Resolving Dotnet Core Runtime version
+    Candidate version sources (in priority order):
+      aspnet.csproj -&gt; &#34;3.1.0&#34;
+      &lt;unknown&gt;     -&gt; &#34;&#34;
+
+    No exact version match found; attempting version roll-forward
+
+    Selected dotnet-runtime version (using aspnet.csproj): 3.1.16
+
+  Executing build process
+    Installing Dotnet Core Runtime 3.1.16
+      Completed in 7.304s
+
+  Configuring environment for build and launch
+    DOTNET_ROOT -&gt; &#34;/workspace/.dotnet_root&#34;
+
+  Configuring environment for build
+    RUNTIME_VERSION -&gt; &#34;3.1.16&#34;
+
+Paketo ASP.NET Core Buildpack 0.1.12
+  Resolving Dotnet Core ASPNet version
+    Candidate version sources (in priority order):
+      RUNTIME_VERSION -&gt; &#34;3.1.16&#34;
+      aspnet.csproj   -&gt; &#34;3.1.0&#34;
+      &lt;unknown&gt;       -&gt; &#34;&#34;
+
+    Selected dotnet-aspnetcore version (using RUNTIME_VERSION): 3.1.16
+
+  Executing build process
+    Installing Dotnet Core ASPNet 3.1.16
+      Completed in 2.582s
+
+  Configuring environment
+    DOTNET_ROOT -&gt; &#34;/workspace/.dotnet_root&#34;
+
+Paketo .NET Core SDK Buildpack 0.1.10
+  Resolving .NET Core SDK version
+    Candidate version sources (in priority order):
+      RUNTIME_VERSION -&gt; &#34;3.1.410&#34;
+      &lt;unknown&gt;       -&gt; &#34;*&#34;
+      aspnet.csproj   -&gt; &#34;3.1.*&#34;
+
+    Selected .NET Core SDK version (using RUNTIME_VERSION): 3.1.410
+
+  Executing build process
+    Installing .NET Core SDK 3.1.410
+      Completed in 14.08s
+
+  Configuring environment
+    DOTNET_ROOT -&gt; &#34;/workspace/.dotnet_root&#34;
+    PATH        -&gt; &#34;/workspace/.dotnet_root:$PATH&#34;
+
+Paketo ICU Buildpack 0.0.102
+  Executing build process
+    Installing ICU
+      Completed in 2.56s
+
+Paketo .NET Publish Buildpack 0.3.0
+  Executing build process
+    Running &#39;dotnet publish /workspace --configuration Release --runtime ubuntu.18.04-x64 --self-contained false --output /tmp/dotnet-publish-output295991778&#39;
+      Completed in 5.2121426s
+
+  Removing source code
+
+Paketo .NET Execute Buildpack 0.4.0
+  Assigning launch processes
+    web: /workspace/aspnet --urls http://0.0.0.0:${PORT:-8080}
+
+===&gt; EXPORTING
+Adding layer &#39;paketo-buildpacks/ca-certificates:helper&#39;
+Adding layer &#39;paketo-buildpacks/dotnet-core-runtime:dotnet-core-runtime&#39;
+Adding layer &#39;paketo-buildpacks/dotnet-core-aspnet:dotnet-core-aspnet&#39;
+Adding layer &#39;paketo-buildpacks/dotnet-core-sdk:dotnet-env-var&#39;
+Adding layer &#39;paketo-buildpacks/icu:icu&#39;
+Adding 1/1 app layer(s)
+Adding layer &#39;launcher&#39;
+Adding layer &#39;config&#39;
+Adding layer &#39;process-types&#39;
+Adding label &#39;io.buildpacks.lifecycle.metadata&#39;
+Adding label &#39;io.buildpacks.build.metadata&#39;
+Adding label &#39;io.buildpacks.project.metadata&#39;
+Setting default process type &#39;web&#39;
+Saving paketo-demo-app...
+*** Images (4c1b1f739e63):
+      paketo-demo-app
+Adding cache layer &#39;paketo-buildpacks/dotnet-core-runtime:dotnet-core-runtime&#39;
+Adding cache layer &#39;paketo-buildpacks/dotnet-core-aspnet:dotnet-core-aspnet&#39;
+Adding cache layer &#39;paketo-buildpacks/dotnet-core-sdk:dotnet-core-sdk&#39;
+Adding cache layer &#39;paketo-buildpacks/icu:icu&#39;
+Successfully built image paketo-demo-app
+</code>
+    </pre>
+</div>
+
+<p>Once the build finishes, you&rsquo;ll see that the resulting image is on your Docker daemon.</p>
+<h3 id="run-the-app-2" class="markup-heading">
+    <a class="markup-heading__link" href="#run-the-app-2">
+        Run the App
+    </a>
+</h3><p>Let&rsquo;s start an instance of our app and interact with it.</p>
+<p>Run the app image with Docker. It will receive incoming requests <code>localhost:8080</code>.</p>
+<pre class="copyable"><code class="copyable__code">docker run -d -p 8080:8080 -e PORT=8080 paketo-demo-app
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<p>Wait a few moments for the app to start. Then, use <code>curl</code> to make a request.</p>
+<pre class="copyable"><code class="copyable__code">curl http://localhost:8080
+</code><img class="copyable__clipboard" src="/images/clipboard.svg" alt="copy to clipboard" /><div class="copyable__copied copied">Copied!</div></pre>
+
+<div class="code-output">
+    <div class="btn code-output__btn code-output__btn">View Output</div>
+    <pre class="code-output__output-container">
+        <code class="code-output__output">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Powered By Paketo Buildpacks&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;img style=&#34;display: block; margin-left: auto; margin-right: auto; width: 50%;&#34; src=&#34;https://paketo.io/images/paketo-logo-full-color.png&#34;&gt;&lt;/img&gt;
+  &lt;/body&gt;
+&lt;/html&gt;%
+</code>
+    </pre>
+</div>
+
+<p>You can also visit <a href="http://localhost:8080">http://localhost:8080</a> with your browser to see the app&rsquo;s homepage.</p>
+<p>You&rsquo;ve done it! As you can see, Paketo buildpacks do most of the hard work for you.</p>
+<p>Check out more <a href="https://github.com/paketo-buildpacks/samples">sample apps</a> that work with Paketo Buildpacks.</p>
+<p>Keep reading to learn about Paketo Builders, the Cloud Native Buildpack API, and what Paketo Buildpacks are doing under the hood to make it easy to build your apps.</p>
+<!-- raw HTML omitted -->
+
+            </div>
+            
+  <a href="http://github.com/paketo-buildpacks/paketo-website/edit/main/content/docs/_index.md" target="_blank" class="github-edit" style="text-decoration:none">
+    <div class="github-edit__content">
+      <div class="github-edit__logo-container">
+        <img class="github-edit__logo" src="/images/github-mark.png">
+      </div>
+        <div class="github-edit__text">Edit</div>
+    </div>
+</a>
+
+            <p class="docs-mod-time"><strong>Last modified:</strong> August 31, 2021</p>
+        </div>
         
     </div>
 </div>
 
-    <div class="pre-footer pad50">
-    <div class="cf text-right">
-        <img class="footer-logo left" src="https://www.cloudfoundry.org/wp-content/uploads/2017/01/CFF_Logo_rgb.png" alt="Paketo Buildpacks is a Cloud Foundry Project">
-        <p class="right">Paketo Buildpacks is a <a href="https://www.cloudfoundry.org/">Cloud Foundry Project</a></p>
+
+    <footer class="footer text--light">
+    <div class="footer-social-links-container">
+        <a class="footer-social-link" href="https://twitter.com/Paketo_io">
+            <div class="footer-social-link__image-container">
+                <div class="logo">
+                    <img class="logo__image" src="/v2/images/logo-twitter.svg" alt="Blue Twitter bird logo">
+                </div>
+            </div>
+            <div class="text--light text--400">
+                Twitter
+            </div>
+        </a>
+        <a class="footer-social-link" href="https://slack.paketo.io/">
+            <div class="footer-social-link__image-container">
+                <div class="logo">
+                    <img class="logo__image" src="/v2/images/logo-slack.svg" alt="Slack logo">
+                </div>
+            </div>
+            <div class="text--light text--400">
+                Slack
+            </div>
+        </a>
+        <a class="footer-social-link" href="https://github.com/paketo-buildpacks">
+            <div class="footer-social-link__image-container">
+                <div class="logo logo--github">
+                    <img class="logo__image"  src="/v2/images/logo-github-cropped.svg" alt="GitHub Octocat logo"/>
+                </div>
+            </div>
+            <div class="text--light text--400">
+                GitHub
+            </div>
+        </a>
     </div>
+    <div class="footer-privacy-policy">
+        <div class="footer-text--small">Paketo Buildpacks is a <a class="text--light" href="https://www.cloudfoundry.org/">Cloud Foundry</a> Project</div>
+        <img class="cloudfoundry-logo" src="/v2/images/logo-cloudfoundry-light.svg" alt="Cloud Foundry logo" />
+        <a class="footer-text--small text--light" href="https://www.linuxfoundation.org/privacy">Privacy Policy</a>
+    </div>
+</footer><script src="/js/main.5894fab8c0958293eefc1fbf83ee9395661f5f67593c88b4d5ab77d40dd34672.js"></script>
+
+    <div id="footer-skip-link" class="screenreader-container">
+    <a href="#header-skip-link" class="screenreader-text">Skip to Header</a>
 </div>
-<footer class="cf">
-    <nav class="cf">
-        <div class="upper-nav right">
-            <a class="external-link" target="_blank" href="https://twitter.com/Paketo_io">Twitter <svg viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 32,6.076c-1.177,0.522-2.443,0.875-3.771,1.034c 1.355-0.813, 2.396-2.099, 2.887-3.632 c-1.269,0.752-2.674,1.299-4.169,1.593c-1.198-1.276-2.904-2.073-4.792-2.073c-3.626,0-6.565,2.939-6.565,6.565 c0,0.515, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86c-0.565,0.97-0.889,2.097-0.889,3.301 c0,2.278, 1.159,4.287, 2.921,5.465c-1.076-0.034-2.088-0.329-2.974-0.821c-0.001,0.027-0.001,0.055-0.001,0.083 c0,3.181, 2.263,5.834, 5.266,6.438c-0.551,0.15-1.131,0.23-1.73,0.23c-0.423,0-0.834-0.041-1.235-0.118 c 0.836,2.608, 3.26,4.506, 6.133,4.559c-2.247,1.761-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.031-1.566-0.092 c 2.905,1.863, 6.356,2.95, 10.064,2.95c 12.076,0, 18.679-10.004, 18.679-18.68c0-0.285-0.006-0.568-0.019-0.849 C 30.007,8.548, 31.12,7.392, 32,6.076z"></path></g></svg></a>
-            <a class="external-link" target="_blank" href="https://medium.com/paketo-buildpacks/">Blog <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 32v448h448V32H0zm372.2 106.1l-24 23c-2.1 1.6-3.1 4.2-2.7 6.7v169.3c-.4 2.6.6 5.2 2.7 6.7l23.5 23v5.1h-118V367l24.3-23.6c2.4-2.4 2.4-3.1 2.4-6.7V199.8l-67.6 171.6h-9.1L125 199.8v115c-.7 4.8 1 9.7 4.4 13.2l31.6 38.3v5.1H71.2v-5.1l31.6-38.3c3.4-3.5 4.9-8.4 4.1-13.2v-133c.4-3.7-1-7.3-3.8-9.8L75 138.1V133h87.3l67.4 148L289 133.1h83.2v5z"/></svg></a>
-<a class="external-link" target="_blank" href="https://slack.paketo.io">Slack <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg></a>
-<a class="external-link" target="_blank" href="https://github.com/paketo-buildpacks">Github <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a>
-
-        </div>
-    </nav>	
-</footer>
-<script src="/js/plugins.js"></script>
-<script src="/js/main.js"></script>
-
 
 </body>
 
